@@ -4,8 +4,12 @@
 #include <vector>
 #include <cstdint>
 #include <opencv2/opencv.hpp>
-#include "cv_bridge/cv_bridge.hpp"
 #include "rclcpp/rclcpp.hpp"
+#ifdef ROS_DISTRO_JAZZ
+#include "cv_bridge/cv_bridge.hpp"
+#else
+#include "cv_bridge/cv_bridge.h"
+#endif
 #include "lane_detection_msgs/msg/detection_target.hpp"
 #include "lane_detection_msgs/msg/detection_result.hpp"
 #include "lane_detection_msgs/msg/lane.hpp"

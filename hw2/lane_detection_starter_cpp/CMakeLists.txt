@@ -10,9 +10,10 @@ find_package(ament_cmake REQUIRED)
 find_package(lane_detection_msgs REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(OpenCV REQUIRED)
+find_package(rclcpp REQUIRED)
 
 add_executable(detector src/detector.cpp)
-ament_target_dependencies(detector cv_bridge lane_detection_msgs OpenCV)
+ament_target_dependencies(detector rclcpp cv_bridge lane_detection_msgs OpenCV)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
